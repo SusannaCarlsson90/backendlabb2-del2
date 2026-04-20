@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mina arbetserfarenheter</title>
+    </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-container">
+        <button class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+          <ul class="nav-links" id="nav-links">
+            <li><a href="index.html">Hem</a></li>
+            <li><a href="add.html">Lägg till</a></li>
+            <li><a href="about.html">Om projektet</a></li>  
+          </ul>
+        
+      </div>
+    </nav>
+    <main>
+      <div id="app">
+        <h1>Lägg till arbetserfarenhet</h1>
+        
+        <form id="experience-form">
+          <div id="error-message" style="color: red; margin-bottom: 10px;"></div>
+          
+          <label for="companyname">Företagsnamn:</label><br>
+          <input type="text" id="companyname"><br><br>
+      
+          <label for="jobtitle">Jobbtitel:</label><br>
+          <input type="text" id="jobtitle"><br><br>
+      
+          <label for="location">Plats:</label><br>
+          <input type="text" id="location"><br><br>
+
+          <label for="startdate">Startdatum:</label><br>
+          <input type="date" id="startdate"><br><br>
+          
+          <label for="enddate">Slutdatum:</label><br>
+          <input type="date" id="enddate"><br><br>
+      
+          <label for="description">Beskrivning:</label><br>
+          <textarea id="description"></textarea><br><br>
+      
+          <button type="submit">Spara erfarenhet</button>
+        </form>
+      </div>
+  </main>
+  <script type="module" src="/src/add.ts"></script>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

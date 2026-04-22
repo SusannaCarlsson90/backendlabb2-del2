@@ -55,6 +55,30 @@ h1 {
   background-color: white;
 }
 
+#app {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  padding: 30px;
+}
+
+#app input {
+  width: 40vw;
+  height: 5vw;
+}
+
+#description {
+  width: 40vw;
+  height: 20vw;
+}
+
+#experience-list {
+  text-align: start;
+  width: 60vw;
+}
+
+
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
@@ -71,5 +95,9 @@ h1 {
   }
   .nav-links.active {
     display: flex;
+  }
+
+  h1 {
+    font-size: 40px;
   }
 }

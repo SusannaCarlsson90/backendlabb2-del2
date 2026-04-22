@@ -35,7 +35,7 @@ if (errors.length > 0) {
 
 const newExperience = {
   companyname: company,
-  jobtitel: title,
+  jobtitle: title,
   location: location,
   startdate: startdate,
   enddate: enddate,
@@ -46,4 +46,24 @@ const newExperience = {
 
 console.log("Nu är vi redo att skicka detta objekt", newExperience);
 
+//Skicka data till servern med POST:
+
+try {
+  const res = await fetch("http://localhost:5001/workexperience", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(newExperience) //Gör om objekt till text
+  });
+
+if (res.ok) {
+  //Skicka användaren tillbaka till startsidan för att se resultatet
+  window.location.href = "index.html";
+} else {
+  errorMsg.innerText = "Gick ej att spara, något blev fel";
+}
+} catch (error) {
+  error.Msg.innerText = "Kunde ej ansluta till servern"
+}
 });

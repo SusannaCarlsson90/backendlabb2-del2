@@ -14,34 +14,28 @@ async function getData() {
   const res = await fetch("http://localhost:5001/workexperience");
   const data = await res.json();
 
-  console.table(data);
+  //Hämtar min div från index.html
+  const experienceList =  document.getElementById("experience-list");
+  if (experienceList) {
+    experienceList.innerHTML = ""; //Rensa gammal text
+    //Gå igenom varje arbetserfarenhet
+    data.forEach((work: any) => {
+      //Lägg till HTML för varje jobb i diven
+      experienceList.innerHTML += `
+        <div class="work-card" style="border: 1px solid #ccc; padding: 10px; margin-bottom: 10px;">
+          <h3>${work.companyname}</h3>
+          <p><strong>${work.jobtitle}</strong> - ${work.location}</p>
+          <p><em>${work.startdate} till ${work.enddate}</em></p>
+          <p>${work.description}</p>
+        </div>
+      `;
+    });
+  }
 }
 
 getData();
 
-async function createExperience() {
-  //Skapar objekt
-  let experience = { 
-      companyname: "Mittuniversitetet", 
-      jobtitle: "Student",
-      location: "Sundsvall",
-      startdate: "2023-01-01",
-      enddate: "2024-01-01",
-      description: "Läser webbutveckling."
-  };
 
-  //Skicka till port 5001 och rätt route
-  const res = await fetch("http://localhost:5001/workexperience", {
-      method: "POST",
-      headers: {
-          "content-type": "application/json"
-      },
-      body: JSON.stringify(experience)
-  });
 
-  const data = await res.json();
-  console.log(data);
-}
 
-// Kör funktionen för att skicka datan
-createExperience();
+

@@ -7,6 +7,8 @@ body {
 h1 {
   font-size: 56px;
   margin: 0;
+  text-align: center;
+  padding: 12px;
 } 
 
 
@@ -77,6 +79,15 @@ h1 {
   text-align: start;
   width: 60vw;
 }
+
+.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 60vw;
+  margin: 0 auto;
+}
+
 
 
 @media (max-width: 768px) {

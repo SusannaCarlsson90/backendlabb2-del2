@@ -39,6 +39,7 @@ async function getData() {
 
 getData();
 
+//Radera 
 (window as any).deleteExperience = async (id: number) => {
   //Dubbelkolla om användaren vill radera?
   if (confirm("Är du säker på att du vill radera denna erfarenhet?")) {
@@ -57,7 +58,7 @@ getData();
           }
           
       } catch (error) {
-        console.error("DETTA ÄR FELET:", error.message); // Lägg till denna rad!
+        console.error("DETTA ÄR FELET:", error.message); 
         res.status(500).json({ message: error.message });
       }
   }
